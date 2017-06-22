@@ -1,9 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<form action="/" method="post">
- <input name='username' type='text' value='Enter a Valid Username'/><br>
- <input name='password' type='password' value='Enter a Valid Password'><br>
- <input type='submit' value="Register Now">
+<form action="/welcome" method="post">
+ <label>Enter a valid username</label><br>
+  <input name='username' type='text' value={{username_text}}>
+   <p class='error'>{{username_e}}</p>
+ <label>Enter a valid password</label><br>
+  <input name='password' type='password' value={{password_text}}>
+   <p class='error'>{{password_e}}</p>
+ <label>Please re-enter your password</label><br>
+  <input name='password2' type='password' value={{password2_text}}>
+   <p class="error">{{password2_e}}</p>
+  <input type='submit' value="Register Now">
 </form>
 {% endblock %}
